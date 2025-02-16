@@ -55,14 +55,17 @@ export default function AppSidebar() {
 	return (
 		<Sidebar variant="floating" className="py-10">
 			<SidebarHeader>
-				<div className="flex flex-col items-center">
-					<Image
-						src={profile}
-						width={150}
-						height={150}
-						alt="Profile"
-						className="bg-neutral-700 rounded-[20px] mb-4"
-					/>
+				<div className="flex flex-col items-center gap-2">
+					<div className="relative w-[150px] h-[150px] overflow-hidden rounded-[20px] bg-neutral-700 mb-2">
+						<Image
+							src={profile}
+							alt="Profile"
+							fill={true}
+							security="restricted"
+							sizes="100%"
+							className="object-cover"
+						/>
+					</div>
 					<h1 className="text-2xl font-bold mb-2">Anurag Porte</h1>
 					<p className="bg-neutral-700/60 px-4 py-2 rounded-xl text-sm text-gray-200 mb-4">
 						Software Developer

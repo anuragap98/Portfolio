@@ -18,8 +18,8 @@ export default function Resume() {
 
 	const experience = [
 		{
-			role: "Creative Director",
-			period: "2015 — Present",
+			role: "Software Developer",
+			period: "2022 — Present",
 			description:
 				"Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.",
 		},
@@ -56,16 +56,14 @@ export default function Resume() {
 				{/* Timeline List */}
 				<ol className="relative ml-6">
 					{education.map((item, index) => (
-						<li
-							key={index}
-							className="relative pl-10 pb-6"
-							style={{ "--height-adjust": "50px" } as React.CSSProperties}
-						>
+						<li key={index} className="relative pl-10 pb-6">
 							{/* Timeline Vertical Line */}
-							<div
-								className="absolute top-[-25px] left-[0px] w-[1px] bg-neutral-700 last:hidden"
-								style={{ height: `calc(100% + 10px)` }}
-							></div>
+							{index !== education.length - 1 && (
+								<div
+									className="absolute left-[0px] top-[-25px] w-[1px] bg-neutral-700"
+									style={{ height: "calc(100% + 40px)" }}
+								></div>
+							)}
 
 							{/* Timeline Dot */}
 							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
@@ -94,16 +92,14 @@ export default function Resume() {
 				{/* Timeline List */}
 				<ol className="relative ml-6">
 					{experience.map((item, index) => (
-						<li
-							key={index}
-							className="relative pl-10 pb-6"
-							style={{ "--height-adjust": "50px" } as React.CSSProperties}
-						>
+						<li key={index} className="relative pl-10 pb-6">
 							{/* Timeline Vertical Line */}
-							<div
-								className="absolute top-[-25px] left-[0px] w-[1px] bg-neutral-700 last:hidden"
-								style={{ height: `calc(100% + 10px)` }}
-							></div>
+							{index !== experience.length - 1 && (
+								<div
+									className="absolute left-[0px] top-[-25px] w-[1px] bg-neutral-700"
+									style={{ height: "calc(100% + 40px)" }}
+								></div>
+							)}
 
 							{/* Timeline Dot */}
 							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
