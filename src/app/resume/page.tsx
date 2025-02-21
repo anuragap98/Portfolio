@@ -1,8 +1,8 @@
 import IconBox from "@/components/icon-box";
-import { Book } from "lucide-react";
+import { Book, Dot, Minus } from "lucide-react";
 
 export default function Resume() {
-	const education = [
+	const educations = [
 		{
 			school: "Indian Institute Of Techonology, Kharagpur",
 			period: "2017 — 2022",
@@ -16,24 +16,101 @@ export default function Resume() {
 		},
 	];
 
-	const experience = [
+	const experiences = [
 		{
 			role: "Software Developer",
-			period: "2022 — Present",
-			description:
-				"Nemo enim ipsam voluptatem blanditiis praesentium voluptum delenit atque corrupti, quos dolores et qvuas molestias exceptur.",
+			company: "ICICI Bank",
+			period: "2023 — Present",
+			projects: [
+				{
+					id: 1,
+					title: "NFT Rewards 360",
+					category: "Web development",
+					description: [
+						"Developed a blockchain-based NFT Rewards 360 Platform frontend using Vite, accelerating page load speeds by 65% and enhancing user experience.",
+						"Engineered a secure Web3 authentication system integrating MetaMask with private blockchain technology, reducing unauthorized access attempts by 98% through a robust 2FA solution.",
+						"Implemented an NFT-based coupon redemption system, processing 10,000+ monthly transactions with 99.9% reliability and an average completion time of 3.2 seconds.",
+						"Optimized smart contract integration for NFT minting and redemption, decreasing gas fees by 35% and improving transaction success rate to 99.7%.",
+						"Designed a responsive UI/UX for blockchain interactions, increasing user engagement by 42% and lowering abandonment rate from 24% to 8%.",
+					],
+				},
+				{
+					id: 2,
+					title: "Geolocation Analytics Platform",
+					category: "Web development",
+					description: [
+						"Developed a geospatial analytics platform processing 5M+ data points using GeoPandas and MongoDB, reducing query latency by 35%, enabling real-time location intelligence.",
+						"Engineered an optimized database architecture, enhancing retrieval speeds by 40% and supporting high-volume geospatial queries for enterprise applications.",
+						"Implemented clustering algorithms to identify geographic patterns, improving decision-making accuracy by 40% and uncovering actionable insights.",
+						"Designed and deployed fraud detection analytics, visualizing anomalous geospatial behaviors and mitigating fraudulent activities by 25% through advanced geospatial modeling.",
+						"Built an interactive visualization layer using Folium & Google Maps API, delivering real-time geospatial intelligence with sub-500ms latency, enhancing user experience and operational efficiency.",
+					],
+				},
+				{
+					id: 3,
+					title: "ILabs Page",
+					category: "Web development",
+					description: [
+						"Developed a blockchain-based NFT Rewards 360 Platform frontend using Vite, accelerating page load speeds by 65% and enhancing user experience.",
+						"Engineered a secure Web3 authentication system integrating MetaMask with private blockchain technology, reducing unauthorized access attempts by 98% through a robust 2FA solution.",
+						"Implemented an NFT-based coupon redemption system, processing 10,000+ monthly transactions with 99.9% reliability and an average completion time of 3.2 seconds.",
+						"Optimized smart contract integration for NFT minting and redemption, decreasing gas fees by 35% and improving transaction success rate to 99.7%.",
+						"Designed a responsive UI/UX for blockchain interactions, increasing user engagement by 42% and lowering abandonment rate from 24% to 8%.",
+					],
+				},
+				{
+					id: 4,
+					title: "HCR Platform",
+					category: "Web development",
+					description: [
+						"Designed a full-stack web application (React & Django) in a tight 1-month timeframe, enhancing financial operations and internal efficiency.",
+						"Led a 4-member development team, completing ideation and deployment 50% faster than industry benchmarks.",
+						"Built authentication and role-based access controls, enhancing data security and regulatory compliance.",
+						"Optimized API queries, reducing data retrieval times by 30%.",
+					],
+				},
+			],
 		},
 		{
-			role: "Art Director",
-			period: "2013 — 2015",
-			description:
-				"Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.",
-		},
-		{
-			role: "Web Designer",
-			period: "2010 — 2013",
-			description:
-				"Nemo enims ipsam voluptatem, blanditiis praesentium voluptum delenit atque corrupti, quos dolores et quas molestias exceptur.",
+			role: "Frontend Developer",
+			company: "ICICI Bank",
+			period: "2022 — 2023",
+			projects: [
+				{
+					id: 1,
+					title: "Capital Market Onboarding Platform",
+					category: "Web development",
+					description: [
+						"Engineered a low-code, configurable onboarding platform, enabling 20+ teams to onboard 1M+ clients securely.",
+						"Designed and implemented dynamic onboarding workflows, reducing onboarding time by 50%.",
+						"Developed a reusable form component library, improving UI consistency and cutting development effort by 40%.",
+						"Automated deployment processes using CI/CD pipelines, reducing production deployment failures by 30%.",
+						"Integrated API validation and authentication mechanisms, ensuring 100% compliance with financial security regulations.",
+					],
+				},
+				{
+					id: 2,
+					title: "State Machine as a Service",
+					category: "Web development",
+					description: [
+						"Developed an interactive flow-diagram-based backend state machine, allowing financial teams to create and manage complex transaction workflows.",
+						"Built a visual state management system for financial transactions, reducing manual configuration errors by 60%.",
+						"Optimized backend state transitions, improving transaction processing speed by 35%.",
+						"Deployed scalable AWS infrastructure, reducing server downtime by 20%.",
+					],
+				},
+				{
+					id: 3,
+					title: "Foreign Exchange Trading Platform",
+					category: "Web development",
+					description: [
+						"Led the development of an internal trading dashboard, integrating FTXP APIs to support secure, real-time foreign exchange transactions.",
+						"Developed a high-performance trading interface, increasing transaction efficiency by 25%.",
+						"Implemented real-time exchange rate updates, reducing latency by 40%.",
+						"Integrated end-to-end testing frameworks, achieving 90%+ test coverage and ensuring compliance with financial standards.",
+					],
+				},
+			],
 		},
 	];
 
@@ -55,10 +132,10 @@ export default function Resume() {
 
 				{/* Timeline List */}
 				<ol className="relative ml-6">
-					{education.map((item, index) => (
+					{educations.map((edx, index) => (
 						<li key={index} className="relative pl-10 pb-6">
 							{/* Timeline Vertical Line */}
-							{index !== education.length - 1 && (
+							{index !== educations.length - 1 && (
 								<div
 									className="absolute left-[0px] top-[-25px] w-[1px] bg-neutral-700"
 									style={{ height: "calc(100% + 40px)" }}
@@ -69,11 +146,11 @@ export default function Resume() {
 							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
 
 							{/* Timeline Content */}
-							<h4 className="text-lg font-bold">{item.school}</h4>
+							<h4 className="text-lg font-bold">{edx.school}</h4>
 							<span className="block text-sm font-semibold text-primary">
-								{item.period}
+								{edx.period}
 							</span>
-							<p className="mt-2  text-neutral-400">{item.description}</p>
+							<p className="mt-2  text-neutral-400">{edx.description}</p>
 						</li>
 					))}
 				</ol>
@@ -91,10 +168,10 @@ export default function Resume() {
 
 				{/* Timeline List */}
 				<ol className="relative ml-6">
-					{experience.map((item, index) => (
+					{experiences.map((exp, index) => (
 						<li key={index} className="relative pl-10 pb-6">
 							{/* Timeline Vertical Line */}
-							{index !== experience.length - 1 && (
+							{index !== experiences.length - 1 && (
 								<div
 									className="absolute left-[0px] top-[-25px] w-[1px] bg-neutral-700"
 									style={{ height: "calc(100% + 40px)" }}
@@ -105,11 +182,30 @@ export default function Resume() {
 							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
 
 							{/* Timeline Content */}
-							<h4 className="text-lg font-bold">{item.role}</h4>
+							<h4 className="flex gap-1 items-center text-lg font-bold">
+								<p>{exp.role}</p>
+								<Minus />
+								<p>{exp.company}</p>
+							</h4>
 							<span className="block text-sm font-semibold text-primary">
-								{item.period}
+								{exp.period}
 							</span>
-							<p className="mt-2  text-neutral-400">{item.description}</p>
+							{exp.projects.map((project, index) => (
+								<div key={`${project.id}-` + index}>
+									<div className="mt-2 text-base font-semibold text-blue-200">
+										{project.title}
+									</div>
+									{project.description.map((desc, index) => (
+										<div key={`${desc}-` + index} className="relative mt-2">
+											<Dot
+												size={32}
+												className="absolute left-[-10px] top-[-3px]"
+											/>
+											<p className="relative left-5 text-neutral-400">{desc}</p>
+										</div>
+									))}
+								</div>
+							))}
 						</li>
 					))}
 				</ol>

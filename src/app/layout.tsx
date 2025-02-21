@@ -33,10 +33,10 @@ export default function RootLayout({
 			<body className={`${interSans.variable} antialiased`}>
 				<SidebarProvider>
 					<AppSidebar />
-					<main className="flex flex-col lg:flex-row min-h-screen lg:px-4 lg:py-10 gap-8">
-						<div className="flex-1 bg-sidebar rounded-2xl lg:p-4">
+					<main className="relative flex flex-col h-screen px-4 pt-10 pb-4">
+						<div className="overflow-y-scroll bg-sidebar rounded-2xl">
 							<Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
-							{children}
+							<div className="my-4 px-6 scroll-sm">{children}</div>
 						</div>
 					</main>
 				</SidebarProvider>

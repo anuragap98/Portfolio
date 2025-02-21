@@ -21,14 +21,17 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
 	];
 
 	return (
-		<nav className="sticky top-10 z-50 flex justify-between items-center mb-8">
+		<nav
+			className={`sticky top-0 z-10 w-full flex justify-between items-center px-4 py-4 transition-all duration-300 
+			backdrop-filter backdrop-blur-xl shadow-[0px_4px_30px_rgba(96,96,97,0.1)]`}
+		>
 			{/* Navigation */}
 			<ul className="flex space-x-4">
 				{links.map((link) => (
 					<li key={link.href}>
 						<Link
 							href={link.href}
-							className={`px-4 py-2 rounded-full font-semibold transition-colors ${
+							className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
 								pathname === link.href
 									? "bg-primary text-neutral-800"
 									: "text-neutral-400 hover:text-gray-100 dark:hover:text-white"
