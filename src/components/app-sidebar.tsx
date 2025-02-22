@@ -63,6 +63,7 @@ export default function AppSidebar() {
 							fill={true}
 							security="restricted"
 							sizes="100%"
+							priority
 							className="object-cover"
 						/>
 					</div>

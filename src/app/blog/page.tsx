@@ -34,15 +34,17 @@ const posts = [
 
 export default function Blog() {
 	return (
-		<div className="space-y-8">
-			<h1 className="text-4xl font-bold mb-8">Blog</h1>
-
+		<div className="container mx-auto px-4 space-y-8">
+			<div>
+				<h1 className="text-3xl font-bold">Blog</h1>
+				<hr className="h-1 bg-amber-200 rounded-full w-10"></hr>
+			</div>
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{posts.map((post, index) => (
 					<AnimatedCard
 						key={index}
 						index={index}
-						className="bg-gray-800/50 border-gray-700 overflow-hidden"
+						className="bg-gray-800/50 border-gray-700 overflow-hidden h-full"
 					>
 						<CardContent className="p-0">
 							<Image
