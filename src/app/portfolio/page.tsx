@@ -10,41 +10,51 @@ import project4 from "../assets/project-4.png";
 import project5 from "../assets/project-5.png";
 import project6 from "../assets/project-6.png";
 import AnimatedCard from "@/components/animated-card";
-import { Eye, Github } from "lucide-react";
+import { Eye, Figma, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const projects = [
 	{
 		title: "Wingman Store",
 		category: "Web Development",
-		image: project1,
+		image: project2,
+		website: "https://wingman-store-one.vercel.app/",
 		url: "https://github.com/anuragap98/Wingman-Store",
 	},
 	{
 		title: "Orizon",
 		category: "Web Development",
-		image: project2,
+		image: project1,
 	},
 	{
-		title: "Fundo",
+		title: "ILabs Page",
 		category: "Web Design",
 		image: project3,
+		url: "https://www.figma.com/design/JmH3PQ75qMQT9zjrld1ALh/ILabs-Page?node-id=265-1009&t=s01jta31mFzYqnp8-1",
+	},
+	{
+		title: "NFT Rewards 360",
+		category: "Web Design",
+		image: project4,
+		url: "https://www.figma.com/design/PIFltBXiue1xtzPRumoZle/NFT-UI?node-id=0-1&t=8RWwTlFIeI3U0Rss-1",
+	},
+	{
+		title: "Hiring Platform",
+		category: "Web Design",
+		image: project5,
+		url: "https://www.figma.com/design/MxMcRb4nwwEa4wa4Rvj6AF/Hiring-Platform?node-id=267-2&t=pOqdLpHi4Y4xnN8h-1",
+	},
+	{
+		title: "FXTP Demo",
+		category: "Web Design",
+		image: project6,
+		url: "https://www.figma.com/design/IbCEzF7bEfdOX2KBmqGK2r/FXTP-Demo?node-id=0-1&t=sYsbKKqikf8SAF94-1",
 	},
 	{
 		title: "AI Email Classifier",
 		category: "Applications",
 		image: project4,
 		url: "https://github.com/anuragap98/Ai-Email-Classifier",
-	},
-	{
-		title: "DSM.",
-		category: "Web Design",
-		image: project5,
-	},
-	{
-		title: "MetaSpark",
-		category: "Web Design",
-		image: project6,
 	},
 ];
 
@@ -77,7 +87,6 @@ export default function Portfolio() {
 					</button>
 				))}
 			</div>
-
 			<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 				{filteredProjects.map((project, index) => (
 					<AnimatedCard
@@ -103,11 +112,29 @@ export default function Portfolio() {
 												hidden: !project.url,
 											})}
 										>
-											<Eye className="cursor-pointer" />
-											<Github
-												className="cursor-pointer ml-2"
-												onClick={() => window.open(project.url, "_blank")}
-											/>
+											{project.category === "Web Design" ? (
+												<Figma
+													className="cursor-pointer ml-2"
+													onClick={() => window.open(project.url, "_blank")}
+												/>
+											) : (
+												<>
+													<Eye
+														className={`${
+															project.website ? "cursor-pointer" : "hidden"
+														} ml-2`}
+														onClick={() =>
+															window.open(project.website, "_blank")
+														}
+													/>
+													<Github
+														className={`${
+															project.url ? "cursor-pointer" : "hidden"
+														} ml-2`}
+														onClick={() => window.open(project.url, "_blank")}
+													/>
+												</>
+											)}
 										</p>
 									</div>
 								</div>
