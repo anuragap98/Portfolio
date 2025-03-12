@@ -58,7 +58,7 @@ export default function AppSidebar() {
 		<Sidebar variant="floating" className="py-10">
 			<SidebarHeader>
 				<div className="flex flex-col items-center gap-2">
-					<div className="relative w-[150px] h-[150px] overflow-hidden rounded-[20px] bg-neutral-700 mb-2">
+					<div className="relative w-[150px] h-[150px] overflow-hidden rounded-[20px] dark:bg-neutral-700  mb-2">
 						<Image
 							src={profile}
 							alt="Profile"
@@ -70,7 +70,7 @@ export default function AppSidebar() {
 						/>
 					</div>
 					<h1 className="text-2xl font-bold mb-2">Anurag Porte</h1>
-					<p className="bg-neutral-700/60 px-4 py-2 rounded-xl text-sm text-gray-200 mb-4">
+					<p className="bg-[#FFF2F2]/60 dark:bg-neutral-700/60 px-4 py-2 rounded-xl text-sm text-neutral-600  dark:text-gray-200 mb-4">
 						Software Developer
 					</p>
 				</div>
@@ -88,16 +88,19 @@ export default function AppSidebar() {
 								key={index}
 								className="flex justify-start items-center gap-3 overflow-hidden"
 							>
-								<div className="w-12 h-12 rounded-xl flex items-center justify-center shadow-md bg-gradient-to-br from-neutral-700 via-neutral-700/0 to-transparent">
-									<item.icon size={18} color="hsl(45, 100%, 72%)" />
+								<div className="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-neutral-200 via-neutral-100/0 to-transparent dark:from-neutral-700 dark:via-neutral-700/0 dark:to-transparent">
+									<item.icon
+										size={18}
+										className="text-indigo-700 dark:text-primary"
+									/>
 								</div>
 								<div className="flex flex-col overflow-hidden">
-									<div className="text-neutral-400 uppercase text-xs">
+									<div className="text-indigo-400 dark:text-neutral-400 uppercase text-xs">
 										{item.label}
 									</div>
 									<a
 										href={item.link}
-										className="text-neutral-100 text-sm whitespace-nowrap text-ellipsis overflow-hidden hover:text-yellow-500 transition-colors"
+										className="text-neutral-600 dark:text-neutral-100 text-sm whitespace-nowrap text-ellipsis overflow-hidden hover:text-indigo-800 dark:hover:text-yellow-500 transition-colors"
 									>
 										{item.value}
 									</a>
@@ -114,7 +117,7 @@ export default function AppSidebar() {
 						<a
 							key={index}
 							href={link.href}
-							className="p-2 text-neutral-400 hover:text-neutral-100"
+							className="p-2 text-indigo-400 hover:text-indigo-800 dark:text-neutral-400 dark:hover:text-yellow-500"
 						>
 							<link.icon size={20} />
 						</a>

@@ -33,8 +33,8 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
 							href={link.href}
 							className={`px-4 py-2 rounded-full font-semibold transition-all duration-300 ${
 								pathname === link.href
-									? "bg-primary text-neutral-800"
-									: "text-neutral-400 hover:text-gray-100 dark:hover:text-white"
+									? "bg-primary text-indigo-100 dark:text-neutral-800"
+									: "text-indigo-500 dark:text-neutral-400 hover:text-indigo-800 dark:hover:text-neutral-100"
 							}`}
 						>
 							{link.label}

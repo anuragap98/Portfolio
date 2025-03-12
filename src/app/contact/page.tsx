@@ -84,10 +84,10 @@ export default function Contact() {
 	};
 
 	return (
-		<div className="container mx-auto px-4 space-y-8">
+		<div className="container mx-auto px-2 space-y-8">
 			<div>
 				<h1 className="text-3xl font-bold">Contact</h1>
-				<hr className="h-1 bg-amber-200 rounded-full w-10"></hr>
+				<hr className="h-1 bg-indigo-800 dark:bg-amber-200 rounded-full w-10"></hr>
 			</div>
 			<div className="grid grid-cols-1 gap-8">
 				<Card>
@@ -100,11 +100,11 @@ export default function Contact() {
 							allowFullScreen
 							loading="lazy"
 							referrerPolicy="no-referrer-when-downgrade"
-							className="rounded-lg"
+							className="rounded-xl"
 						></iframe>
 					</CardContent>
 				</Card>
-				<Card className="bg-neutral-800 border-neutral-700/50">
+				<Card className="bg-indigo-100/50 dark:bg-neutral-800 dark:border-neutral-700/50">
 					<CardContent className="p-6">
 						<h2 className="text-xl font-bold mb-6">Message Me</h2>
 						<form onSubmit={handleSubmit} className="space-y-6">
@@ -113,7 +113,7 @@ export default function Contact() {
 									type="text"
 									name="name"
 									placeholder="Full name"
-									className="bg-neutral-900/50 border-neutral-700"
+									className="bg-indigo-100 dark:bg-neutral-900/50 dark:border-neutral-700 border-indigo-200"
 									value={formData.name}
 									onChange={(e) =>
 										setFormData({ ...formData, name: e.target.value })
@@ -123,7 +123,7 @@ export default function Contact() {
 									type="email"
 									name="email"
 									placeholder="Email address"
-									className="bg-neutral-900/50 border-neutral-700"
+									className="bg-indigo-100 dark:bg-neutral-900/50 dark:border-neutral-700 border-indigo-200"
 									value={formData.email}
 									onChange={(e) =>
 										setFormData({ ...formData, email: e.target.value })
@@ -133,7 +133,7 @@ export default function Contact() {
 							<Textarea
 								name="message"
 								placeholder="Your Message"
-								className="bg-neutral-900/50 border-neutral-700 min-h-[100px]"
+								className="bg-indigo-100 dark:bg-neutral-900/50 dark:border-neutral-700 border-indigo-200 min-h-[100px]"
 								value={formData.message}
 								onChange={(e) =>
 									setFormData({ ...formData, message: e.target.value })
@@ -141,7 +141,7 @@ export default function Contact() {
 							/>
 							<Button
 								type="submit"
-								className="w-full md:w-auto bg-amber-200 text-gray-900 hover:bg-amber-300"
+								className="w-full md:w-auto text-white bg-indigo-400 hover:bg-indigo-300 dark:bg-amber-200 dark:text-gray-900 dark:hover:bg-amber-300"
 								disabled={loading}
 							>
 								{loading ? "Sending..." : "Send Message"}

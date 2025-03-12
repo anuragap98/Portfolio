@@ -116,17 +116,17 @@ export default function Resume() {
 	];
 
 	return (
-		<div className="container mx-auto px-4 space-y-12">
+		<div className="container mx-auto px-2 space-y-12">
 			<div>
 				<h1 className="text-3xl font-bold">Resume</h1>
-				<hr className="h-1 bg-amber-200 rounded-full w-10"></hr>
+				<hr className="h-1 bg-indigo-800 dark:bg-amber-200 rounded-full w-10"></hr>
 			</div>
 			{/* Education */}
-			<section className="relative mx-auto text-white">
+			<section className="relative mx-auto text-neutral-700 dark:text-neutral-100">
 				{/* Title Section */}
 				<div className="mb-6 flex items-center gap-4">
 					<IconBox icon={Book} iconSize={20} iconColor="primary">
-						<div className="absolute left-1/2 top-full h-full w-[1px] -translate-x-1/2 bg-neutral-700"></div>
+						<div className="absolute left-1/2 top-full h-full w-[1px] -translate-x-1/2 dark:bg-neutral-700 bg-indigo-500"></div>
 					</IconBox>
 					<h2 className="text-2xl font-bold">Education</h2>
 				</div>
@@ -138,31 +138,33 @@ export default function Resume() {
 							{/* Timeline Vertical Line */}
 							{index !== educations.length - 1 && (
 								<div
-									className="absolute left-[0px] top-[-25px] w-[1px] bg-neutral-700"
+									className="absolute left-[0px] top-[-25px] w-[1px] dark:bg-neutral-700 bg-indigo-500"
 									style={{ height: "calc(100% + 40px)" }}
 								></div>
 							)}
 
 							{/* Timeline Dot */}
-							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
+							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(176,190,242,1)] dark:shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
 
 							{/* Timeline Content */}
 							<h4 className="text-lg font-bold">{edx.school}</h4>
 							<span className="block text-sm font-semibold text-primary">
 								{edx.period}
 							</span>
-							<p className="mt-2  text-neutral-400">{edx.description}</p>
+							<p className="mt-2 text-neutral-700 dark:text-neutral-300">
+								{edx.description}
+							</p>
 						</li>
 					))}
 				</ol>
 			</section>
 
 			{/* Experience */}
-			<section className="relative mx-auto text-white">
+			<section className="relative mx-auto text-neutral-700 dark:text-neutral-100">
 				{/* Title Section */}
 				<div className="mb-6 flex items-center gap-4">
 					<IconBox icon={Book} iconSize={20} iconColor="primary">
-						<div className="absolute left-1/2 top-full h-full w-[1px] -translate-x-1/2 bg-neutral-700"></div>
+						<div className="absolute left-1/2 top-full h-full w-[1px] -translate-x-1/2 bg-indigo-500 dark:bg-neutral-700"></div>
 					</IconBox>
 					<h2 className="text-2xl font-bold">Experiences</h2>
 				</div>
@@ -174,26 +176,28 @@ export default function Resume() {
 							{/* Timeline Vertical Line */}
 							{index !== experiences.length - 1 && (
 								<div
-									className="absolute left-[0px] top-[-25px] w-[1px] bg-neutral-700"
+									className="absolute left-[0px] top-[-25px] w-[1px] dark:bg-neutral-700 bg-indigo-500"
 									style={{ height: "calc(100% + 40px)" }}
 								></div>
 							)}
 
 							{/* Timeline Dot */}
-							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
+							<div className="absolute top-2 -left-[4px] h-2 w-2 rounded-full bg-primary shadow-[0_0_0_4px_rgba(176,190,242,1)] dark:shadow-[0_0_0_4px_rgba(52,52,52,1)]"></div>
 
 							{/* Timeline Content */}
 							<h4 className="flex gap-1 items-center text-lg font-bold">
 								<p>{exp.role}</p>
 								<Minus />
-								<p className="font-medium text-neutral-300">{exp.company}</p>
+								<p className="font-medium text-neutral-700 dark:text-neutral-300">
+									{exp.company}
+								</p>
 							</h4>
 							<span className="block text-sm font-semibold text-primary">
 								{exp.period}
 							</span>
 							{exp.projects.map((project, index) => (
 								<div key={`${project.id}-` + index}>
-									<div className="flex gap-1 items-center mt-2 text-base font-semibold text-blue-200">
+									<div className="flex gap-1 items-center mt-2 text-base font-semibold dark:text-indigo-200 text-indigo-800">
 										<span>{project.title}</span>
 										<Minus size={16} />
 										<span className="font-normal">{project.category}</span>
@@ -204,7 +208,9 @@ export default function Resume() {
 												size={32}
 												className="absolute left-[-10px] top-[-3px]"
 											/>
-											<p className="relative left-5 text-neutral-400">{desc}</p>
+											<p className="relative left-5 text-neutral-700 dark:text-neutral-400">
+												{desc}
+											</p>
 										</div>
 									))}
 								</div>

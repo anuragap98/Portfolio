@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Navbar from "./navbar";
-
+import useStore from "@/lib/store";
 export default function NavbarWrapper({
 	children,
 }: {
@@ -14,8 +14,10 @@ export default function NavbarWrapper({
 		const root = window.document.documentElement;
 		if (isDarkMode) {
 			root.classList.add("dark");
+			useStore.getState().updateTheme("dark");
 		} else {
 			root.classList.remove("dark");
+			useStore.getState().updateTheme("");
 		}
 	}, [isDarkMode]);
 

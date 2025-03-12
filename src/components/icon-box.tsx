@@ -18,9 +18,9 @@ const IconBox = ({
 }: IconBoxProps) => {
 	return (
 		<div
-			className={`relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neutral-700 via-neutral-700/0 to-transparent text-${iconColor} shadow`}
+			className={`relative flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-neutral-200 via-neutral-100/0 to-transparent dark:from-neutral-700 dark:via-neutral-700/0 dark:to-transparent text-${iconColor} shadow`}
 		>
-			<div className="absolute inset-0 m-[1px] rounded-xl bg-neutral-800/50"></div>
+			<div className="absolute inset-0 m-[1px] rounded-xl dark:bg-neutral-800/50 bg-indigo-200/50"></div>
 			<Icon size={iconSize} color={customColor} className="relative" />
 			{children}
 		</div>

@@ -67,10 +67,10 @@ export default function Portfolio() {
 	);
 
 	return (
-		<div className="container mx-auto px-4 space-y-8">
+		<div className="container mx-auto px-2 space-y-8">
 			<div>
 				<h1 className="text-3xl font-bold">Portfolio</h1>
-				<hr className="h-1 bg-amber-200 rounded-full w-10"></hr>
+				<hr className="h-1 bg-indigo-800 dark:bg-amber-200 rounded-full w-10"></hr>
 			</div>
 			<div className="flex flex-wrap gap-4 mb-8">
 				{filters.map((filter) => (
@@ -79,8 +79,8 @@ export default function Portfolio() {
 						onClick={() => setActiveFilter(filter)}
 						className={`min-w-20 text-sm px-4 py-2 rounded-full transition-colors ${
 							activeFilter === filter
-								? "bg-amber-200 text-gray-900"
-								: "text-gray-400 hover:text-white"
+								? "bg-indigo-800 text-white dark:bg-amber-200 dark:text-gray-900"
+								: "text-indigo-800 hover:text-white dark:text-gray-400 dark:hover:text-gray-100"
 						}`}
 					>
 						{filter}
@@ -92,7 +92,7 @@ export default function Portfolio() {
 					<AnimatedCard
 						key={index}
 						index={index}
-						className="bg-gray-800/50 border-gray-700 overflow-hidden group"
+						className="bg-indigo-200/50 dark:bg-neutral-800/50 border-indigo-200 dark:border-neutral-700 overflow-hidden group"
 					>
 						<CardContent className="p-0">
 							<div className="relative">

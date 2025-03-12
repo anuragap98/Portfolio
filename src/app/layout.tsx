@@ -11,7 +11,7 @@ const interSans = Inter({
 });
 
 export const metadata = {
-	title: "Anurag Portfolio",
+	title: "Anurag's Portfolio",
 	description: "Anurag's personal portfolio application",
 	icons: {
 		icon: "./favicon.png",
@@ -28,8 +28,8 @@ export default function RootLayout({
 			<body className={`${interSans.variable} antialiased`}>
 				<SidebarProvider>
 					<AppSidebar />
-					<main className="relative flex-1 flex flex-col h-screen px-4 pt-10 pb-4">
-						<div className="overflow-y-scroll bg-sidebar rounded-2xl h-full">
+					<main className="relative flex-1 flex flex-col h-screen px-4 py-10">
+						<div className="overflow-y-scroll bg-sidebar dark:bg-sidebar rounded-2xl h-full">
 							<NavbarWrapper>{children}</NavbarWrapper>
 						</div>
 					</main>

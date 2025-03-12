@@ -11,14 +11,14 @@
   ---break---
 */
 :root {
-	--background: hsl(0 0% 100%);
-	--foreground: hsl(0 0% 3.9%);
+	--background: hsl(0 0% 98%);
+	--foreground: hsl(0, 0%, 7%);
 	--card: hsl(0 0% 100%);
 	--card-foreground: hsl(0 0% 3.9%);
 	--popover: hsl(0 0% 100%);
 	--popover-foreground: hsl(0 0% 3.9%);
-	--primary: hsl(0 0% 9%);
-	--primary-foreground: hsl(0 0% 98%);
+	--primary: hsl(234 47% 38%);
+	--primary-foreground: hsl(0 0% 9%);
 	--secondary: hsl(0 0% 96.1%);
 	--secondary-foreground: hsl(0 0% 9%);
 	--muted: hsl(0 0% 96.1%);
@@ -40,7 +40,7 @@
 	--radius: 0.6rem;
 
 	/* Sidebar Theme */
-	--sidebar: hsl(0 0% 98%);
+	--sidebar: hsl(227 70% 85%);
 	--sidebar-foreground: hsl(240 5.3% 26.1%);
 	--sidebar-primary: hsl(240 5.9% 10%);
 	--sidebar-primary-foreground: hsl(0 0% 98%);

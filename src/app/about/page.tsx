@@ -35,8 +35,8 @@ export default function About() {
 			{/* About Me */}
 			<section>
 				<h2 className="text-3xl font-bold">About Me</h2>
-				<hr className="h-1 bg-amber-200 rounded-full w-10"></hr>
-				<div className="space-y-4 text-neutral-300 mt-8">
+				<hr className="h-1 bg-indigo-800 dark:bg-amber-200 rounded-full w-10"></hr>
+				<div className="space-y-4 text-neutral-700 dark:text-neutral-300 mt-8">
 					<p>
 						{`Hi, I'm Anurag, a passionate software developer with three years of experience in building innovative digital solutions. My expertise lies in web development, design, and crafting product strategies that drive meaningful user experiences..`}
 					</p>
@@ -57,14 +57,14 @@ export default function About() {
 						<AnimatedCard
 							key={index}
 							index={index}
-							className="shadow-2xl border-neutral-700/50 bg-gradient-to-br from-neutral-700 via-neutral-700/0 to-transparent"
+							className="shadow-2xl border-indigo-100 dark:border-neutral-700/50 bg-gradient-to-br from-neutral-100 via-neutral-100/0 to-transparent dark:from-neutral-700 dark:via-neutral-700/0 dark:to-transparent"
 						>
 							<CardContent className="relative p-6">
-								<div className="absolute -top-2 -left-4 flex justify-center items-center p-2 rounded-md w-10 h-10 bg-neutral-700">
+								<div className="absolute -top-2 -left-4 flex justify-center items-center p-2 rounded-md w-10 h-10 bg-indigo-100 dark:bg-neutral-700">
 									{service.icon}
 								</div>
 								<h3 className="text-xl font-bold mb-2">{service.title}</h3>
-								<p className="text-neutral-300 font-medium">
+								<p className="text-neutral-600 dark:text-neutral-300 font-medium">
 									{service.description}
 								</p>
 							</CardContent>
