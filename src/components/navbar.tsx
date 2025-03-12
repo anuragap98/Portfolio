@@ -4,13 +4,9 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Sun, Moon } from "lucide-react";
 import { Button } from "./ui/button";
-
-interface NavbarProps {
-	isDarkMode: boolean;
-	setIsDarkMode: (value: boolean) => void;
-}
-
-export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
+import { useThemeStore } from "@/lib/theme.store";
+export default function Navbar() {
+	const { theme, setTheme } = useThemeStore();
 	const pathname = usePathname();
 	const links = [
 		{ href: "/", label: "About" },
@@ -45,10 +41,10 @@ export default function Navbar({ isDarkMode, setIsDarkMode }: NavbarProps) {
 			{/* Dark mode */}
 			<Button
 				variant="ghost"
-				onClick={() => setIsDarkMode(!isDarkMode)}
+				onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 				className="p-2"
 			>
-				{isDarkMode ? (
+				{theme === "dark" ? (
 					<Sun size={24} className=" text-yellow-500" />
 				) : (
 					<Moon size={24} />

@@ -2,34 +2,17 @@ import Image from "next/image";
 import { CardContent } from "@/components/ui/card";
 import AnimatedCard from "@/components/animated-card";
 import blog1 from "../assets/project-1.jpg";
-import blog2 from "../assets/project-2.png";
-import blog3 from "../assets/project-3.jpg";
 import { Glow, GlowArea } from "@/components/glow";
 
 const posts = [
 	{
-		title: "Design Conferences in 2022",
-		category: "Design",
-		date: "Feb 23, 2022",
+		title: "How to sign git commits and tags with GPG on macOS",
+		category: "Technology",
+		date: "Mar 12, 2025",
 		image: blog1,
+		url: "https://anuragap.medium.com/how-to-sign-git-commits-and-tags-with-gpg-macos-97dd7de73c8d",
 		excerpt:
-			"Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.",
-	},
-	{
-		title: "Best Fonts Every Designer",
-		category: "Design",
-		date: "Feb 23, 2022",
-		image: blog2,
-		excerpt:
-			"Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.",
-	},
-	{
-		title: "Design Digest #80",
-		category: "Design",
-		date: "Feb 23, 2022",
-		image: blog3,
-		excerpt:
-			"Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem.",
+			"This article will guide you through the process of signing git commits and tags using GPG on macOS.",
 	},
 ];
 
@@ -65,7 +48,16 @@ export default function Blog() {
 											<span>•</span>
 											<span>{post.date}</span>
 										</div>
-										<h3 className="text-xl font-bold mb-2">{post.title}</h3>
+										<h3 className="text-xl font-bold mb-2">
+											<a
+												href={post.url}
+												target="_blank"
+												rel="noopener noreferrer"
+												className="text-indigo-500 hover:text-indigo-600 dark:text-neutral-100 dark:hover:text-amber-200"
+											>
+												{post.title}
+											</a>
+										</h3>
 										<p className="dark:text-gray-400 text-gray-600 flex-grow">
 											{post.excerpt}
 										</p>

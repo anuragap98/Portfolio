@@ -95,7 +95,7 @@ export default function AppSidebar() {
 									/>
 								</div>
 								<div className="flex flex-col overflow-hidden">
-									<div className="text-indigo-400 dark:text-neutral-400 uppercase text-xs">
+									<div className="text-indigo-600 dark:text-neutral-400 uppercase text-xs">
 										{item.label}
 									</div>
 									<a

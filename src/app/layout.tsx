@@ -4,7 +4,6 @@ import { SidebarProvider } from "@/components/ui/sidebar";
 import AppSidebar from "@/components/app-sidebar";
 import { Toaster } from "sonner";
 import NavbarWrapper from "@/components/navbar-wrapper";
-
 const interSans = Inter({
 	subsets: ["latin"],
 	variable: "--font-inter-sans",
@@ -24,8 +23,22 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
+		<html lang="en" suppressHydrationWarning>
 			<body className={`${interSans.variable} antialiased`}>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+              (function() {
+                try {
+                  var savedTheme = localStorage.getItem('theme');
+                  var systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                  var theme = savedTheme || (systemDark ? 'dark' : 'light');
+                  document.documentElement.className = theme;
+                } catch (e) {}
+              })();
+            `,
+					}}
+				/>
 				<SidebarProvider>
 					<AppSidebar />
 					<main className="relative flex-1 flex flex-col h-screen px-4 py-10">

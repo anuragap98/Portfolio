@@ -1,29 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import Navbar from "./navbar";
-import useStore from "@/lib/store";
+import { useThemeStore } from "@/lib/theme.store";
 export default function NavbarWrapper({
 	children,
 }: {
 	children: React.ReactNode;
 }) {
-	const [isDarkMode, setIsDarkMode] = useState(true);
+	const hydrate = useThemeStore((state) => state.hydrate);
 
 	useEffect(() => {
-		const root = window.document.documentElement;
-		if (isDarkMode) {
-			root.classList.add("dark");
-			useStore.getState().updateTheme("dark");
-		} else {
-			root.classList.remove("dark");
-			useStore.getState().updateTheme("");
-		}
-	}, [isDarkMode]);
+		hydrate();
+	}, [hydrate]);
 
 	return (
 		<>
-			<Navbar isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />
+			<Navbar />
 			<div className="my-4 px-6 scroll-sm">{children}</div>
 		</>
 	);
